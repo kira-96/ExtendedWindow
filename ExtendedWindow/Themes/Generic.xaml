@@ -1,0 +1,12 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ExtendedWindow">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ExtendedWindow;component/Themes/NeteaseResizeGrip.xaml" />
+        <ResourceDictionary Source="/ExtendedWindow;component/Themes/WindowFunctionBar.xaml" />
+        <ResourceDictionary Source="/ExtendedWindow;component/Themes/Window.xaml" />
+        <ResourceDictionary Source="/ExtendedWindow;component/Themes/Window.Universal.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
