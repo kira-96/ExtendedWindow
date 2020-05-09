@@ -12,13 +12,16 @@
         Style="{StaticResource Style.Window.Universal}">
 
     <ew:UniversalWindowStyle.TitleBar>
-        <ew:UniversalTitleBar ForegroundColor="Black" InactiveForegroundColor="#7FFFFFFF"
-                              ButtonHoverForeground="Black" ButtonHoverBackground="LightGray"
-                              ButtonPressedForeground="#7FFFFFFF" ButtonPressedBackground="#3F000000" />
+        <ew:UniversalTitleBar ForegroundColor="Black" InactiveForegroundColor="Gray"
+                              ButtonHoverForeground="White" ButtonHoverBackground="#0078D7"
+                              ButtonPressedForeground="White" ButtonPressedBackground="DodgerBlue" />
     </ew:UniversalWindowStyle.TitleBar>
 
-    <Grid Margin="0 32 0 0" Background="White">
-        <Button x:Name="ShowExWindow" 
+    <Grid>
+        <Image x:Name="WindowBackground" Source="bg.jpg" Stretch="UniformToFill" />
+        <Grid x:Name="YourContent"
+              Margin="0 32 0 0" Background="Transparent">
+            <Button x:Name="ShowExWindow" 
                 Content="Extended Window"
                 ToolTip="Show Extended Window"
                 Foreground="White"
@@ -28,5 +31,6 @@
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center"
                 Click="ShowExWindow_Click" />
+        </Grid>
     </Grid>
 </Window>

@@ -31,7 +31,7 @@
                 <ControlTemplate TargetType="Window">
                     <Border Padding="4 1 4 4">
                         <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
-                            <Grid x:Name="TitleBarPanel" VerticalAlignment="Top" Height="31">
+                            <Grid x:Name="TitleBarPanel" VerticalAlignment="Top" Height="31" Panel.ZIndex="100">
                                 <FrameworkElement.Resources>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Width" Value="46"/>
