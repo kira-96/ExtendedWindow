@@ -23,15 +23,15 @@
         </Setter>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome GlassFrameThickness="0 64 0 0" NonClientFrameEdges="Left,Bottom,Right" UseAeroCaptionButtons="False" />
+                <WindowChrome GlassFrameThickness="1 64 1 1" NonClientFrameEdges="None" CaptionHeight="32" UseAeroCaptionButtons="False" />
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Window">
-                    <Border Padding="4 1 4 4">
+                    <Border Padding="1">
                         <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
-                            <Grid x:Name="TitleBarPanel" VerticalAlignment="Top" Height="31" Panel.ZIndex="100">
+                            <Grid x:Name="TitleBarPanel" VerticalAlignment="Top" Height="32" Panel.ZIndex="100">
                                 <FrameworkElement.Resources>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Width" Value="46"/>
@@ -123,7 +123,7 @@
                                         </Style.Triggers>
                                     </Style>
                                 </FrameworkElement.Resources>
-                                <TextBlock x:Name="TitleTextBlock" FontSize="12" Text="{TemplateBinding Title}"
+                                <TextBlock x:Name="TitleTextBlock" FontSize="{DynamicResource {x:Static SystemFonts.CaptionFontSizeKey}}" Text="{TemplateBinding Title}"
                                            Margin="12 0 156 0" VerticalAlignment="Center" Foreground="{StaticResource Brush.TitleBar.Foreground}" />
                                 <StackPanel x:Name="TitleBarButtonPanel" Orientation="Horizontal"
                                             Margin="0 -1 0 0" HorizontalAlignment="Right">
@@ -146,7 +146,12 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
-                            <Setter TargetName="RootGrid" Property="Margin" Value="4 7 4 4" />
+                            <Setter Property="WindowChrome.WindowChrome">
+                                <Setter.Value>
+                                    <WindowChrome ResizeBorderThickness="0" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="RootGrid" Property="Margin" Value="7" />
                             <Setter TargetName="TitleBarPanel" Property="Height" Value="32" />
                             <Setter TargetName="MaximizeButton" Property="Visibility" Value="Collapsed" />
                         </Trigger>

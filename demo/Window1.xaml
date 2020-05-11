@@ -23,5 +23,9 @@
     </ex:ExtendedWindow.FunctionBar>
 
     <Grid>
+        <TextBlock Text="lt" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBlock Text="rt" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top" />
+        <TextBlock Text="rb" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <TextBlock Text="lb" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
     </Grid>
 </ex:ExtendedWindow>
