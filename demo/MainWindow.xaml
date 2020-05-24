@@ -4,38 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ew="clr-namespace:ExtendedWindow;assembly=ExtendedWindow"
+        xmlns:ef="clr-namespace:ExtendedWindow.Effects;assembly=ExtendedWindow"
         xmlns:local="clr-namespace:demo"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="450" 
-        Width="800"
+        Background="Transparent"
+        WindowStyle="None"
         Style="{StaticResource Style.Window.Universal}">
 
+    <Window.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Color.Theme">#1570a6</Color>
+            <Color x:Key="Color.Theme.Light1">#3396cf</Color>
+            <Color x:Key="Color.Theme.Dark1">#065280</Color>
+            <Color x:Key="Color.Foreground">White</Color>
+            <Color x:Key="Color.Foreground.Disable">#999999</Color>
+            <Color x:Key="Color.Background">#232323</Color>
+            <Color x:Key="Color.Background.Header">#323232</Color>
+            <Color x:Key="Color.Background.Items">#262526</Color>
+            <Color x:Key="Color.Background.Footer">#323232</Color>
+            <Color x:Key="Color.Background.Float">#3f3f42</Color>
+            <Color x:Key="Color.Background.Control">#6f6f73</Color>
+            <SolidColorBrush x:Key="Brush.Theme" Color="{StaticResource Color.Theme}" />
+            <SolidColorBrush x:Key="Brush.Theme.Light1" Color="{StaticResource Color.Theme.Light1}" />
+            <SolidColorBrush x:Key="Brush.Theme.Dark1" Color="{StaticResource Color.Theme.Dark1}" />
+            <SolidColorBrush x:Key="Brush.Foreground" Color="{StaticResource Color.Foreground}" />
+            <SolidColorBrush x:Key="Brush.Foreground.Disable" Color="{StaticResource Color.Foreground.Disable}" />
+            <SolidColorBrush x:Key="Brush.Background" Color="{StaticResource Color.Background}" />
+            <SolidColorBrush x:Key="Brush.Background.Header" Color="{StaticResource Color.Background.Header}" />
+            <SolidColorBrush x:Key="Brush.Background.Items" Color="{StaticResource Color.Background.Items}" />
+            <SolidColorBrush x:Key="Brush.Background.Footer" Color="{StaticResource Color.Background.Footer}" />
+            <SolidColorBrush x:Key="Brush.Background.Float" Color="{StaticResource Color.Background.Float}" />
+            <SolidColorBrush x:Key="Brush.Background.Control" Color="{StaticResource Color.Background.Control}" />
+        </ResourceDictionary>
+    </Window.Resources>
+    
     <ew:UniversalWindowStyle.TitleBar>
-        <ew:UniversalTitleBar ForegroundColor="Black" InactiveForegroundColor="Gray"
-                              ButtonHoverForeground="White" ButtonHoverBackground="#0078D7"
-                              ButtonPressedForeground="White" ButtonPressedBackground="DodgerBlue" />
+        <ew:UniversalTitleBar ForegroundColor="{StaticResource Color.Foreground}" InactiveForegroundColor="{StaticResource Color.Foreground.Disable}"
+                              ButtonForegroundColor="{StaticResource Color.Foreground}" ButtonInactiveForegroundColor="{StaticResource Color.Foreground.Disable}"
+                              ButtonHoverForeground="{StaticResource Color.Foreground}" ButtonHoverBackground="{StaticResource Color.Theme.Light1}"
+                              ButtonPressedForeground="{StaticResource Color.Foreground}" ButtonPressedBackground="{StaticResource Color.Theme.Dark1}" />
     </ew:UniversalWindowStyle.TitleBar>
 
     <Grid>
-        <Image x:Name="WindowBackground" Source="bg.jpg" Stretch="UniformToFill" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Grid x:Name="YourContent"
-              Margin="0 32 0 0" Background="Transparent">
+              Grid.Row="1"
+              Background="Transparent">
             <Button x:Name="ShowExWindow" 
-                Content="Extended Window"
-                ToolTip="Show Extended Window"
-                Foreground="White"
-                Background="DodgerBlue"
-                BorderThickness="0"
-                Padding="6"
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center"
-                Click="ShowExWindow_Click" />
-
-            <TextBlock Text="lt" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-            <TextBlock Text="rt" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top" />
-            <TextBlock Text="rb" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
-            <TextBlock Text="lb" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+                    Content="Extended Window"
+                    ToolTip="Show Extended Window"
+                    Foreground="White"
+                    Background="DodgerBlue"
+                    Padding="6"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="ShowExWindow_Click">
+                <Button.BorderBrush>
+                    <ef:RevealBorderBrush />
+                </Button.BorderBrush>
+            </Button>
         </Grid>
     </Grid>
 </Window>

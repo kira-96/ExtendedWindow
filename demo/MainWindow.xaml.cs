@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using ExtendedWindow.Effects;
+using System.Windows;
+using System.Windows.Media;
 
 namespace demo
 {
@@ -10,11 +12,16 @@ namespace demo
         public MainWindow()
         {
             InitializeComponent();
+            _ = new WindowAccentCompositor(this)
+            {
+                Color = Color.FromArgb(0x3F, 0xFF, 0xFF, 0xFF),
+                IsEnabled = true
+            };
         }
 
         private void ShowExWindow_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window = new Window1();
+            ExWindow window = new ExWindow();
             window.Show();
         }
     }

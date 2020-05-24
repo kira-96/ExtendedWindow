@@ -4,20 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="bg.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ExtendedWindow\ExtendedWindow.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="bg.jpg">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
 </Project>

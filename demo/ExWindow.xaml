@@ -1,4 +1,4 @@
-﻿<ex:ExtendedWindow x:Class="demo.Window1"
+﻿<ex:ExtendedWindow x:Class="demo.ExWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,9 +23,5 @@
     </ex:ExtendedWindow.FunctionBar>
 
     <Grid>
-        <TextBlock Text="lt" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <TextBlock Text="rt" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Top" />
-        <TextBlock Text="rb" FontSize="16" Margin="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
-        <TextBlock Text="lb" FontSize="16" Margin="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
     </Grid>
 </ex:ExtendedWindow>

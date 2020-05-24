@@ -3,9 +3,9 @@
     /// <summary>
     /// Window1.xaml 的交互逻辑
     /// </summary>
-    public partial class Window1
+    public partial class ExWindow
     {
-        public Window1()
+        public ExWindow()
         {
             InitializeComponent();
         }
